@@ -30,4 +30,9 @@ def note_search():
     return jsonify({"articles": articles})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    # Renderが教えてくれるPORT（環境変数）か、無ければ5000を使う
+    port = int(os.environ.get("PORT", 5000))
+    # すべてのIP（0.0.0.0）で、上記ポートを使って起動する
+    app.run(host="0.0.0.0", port=port, debug=True)
+    
