@@ -3,6 +3,7 @@ import requests
 
 app = Flask(__name__)
 
+
 @app.route("/note_search", methods=["POST"])
 def note_search():
     keyword = request.json.get("keyword")
